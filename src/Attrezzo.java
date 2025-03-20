@@ -1,6 +1,6 @@
 
 
-//ciao modno
+//ciao 
 
 /**
  * Una semplice classe che modella un attrezzo.
