@@ -87,7 +87,9 @@ public class Stanza {
      * @return la descrizione della stanza
      */
     public String getDescrizione() {
-        return this.toString();
+        return "ti trovi in: "+this.getNome()+ "   Puoi arrivare in:"+this.getStanzaAdiacente("nord").getNome()+" a Nord    "+
+    this.getStanzaAdiacente("sud").getNome()+" a sud    "+this.getStanzaAdiacente("est").getNome()+" a est    "+
+        		this.getStanzaAdiacente("ovest").getNome()+" a ovest";
     }
 
     /**
