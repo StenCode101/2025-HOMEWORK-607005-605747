@@ -1,6 +1,7 @@
 
 
-//ciao Stefano 
+//ueleee alessandro
+
 
 /**
  * Una semplice classe che modella un attrezzo.
