@@ -28,6 +28,11 @@ public class Attrezzo {
 		this.nome = nome;
 	}
 	
+	/* ho aggiunto un costruttore di default per prevenire nullpointer*/
+	public Attrezzo() {
+		this.peso = -1;
+		this.nome = "oggetto non inizializzato";
+	}
 	
 	/**
 	 * Restituisce il nome identificatore dell'attrezzo
