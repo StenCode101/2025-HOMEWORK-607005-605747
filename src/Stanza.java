@@ -87,9 +87,7 @@ public class Stanza {
      * @return la descrizione della stanza
      */
     public String getDescrizione() {
-        return "ti trovi in: "+this.getNome()+ "   Puoi arrivare in:"+this.getStanzaAdiacente("nord").getNome()+" a Nord    "+
-    this.getStanzaAdiacente("sud").getNome()+" a sud    "+this.getStanzaAdiacente("est").getNome()+" a est    "+
-        		this.getStanzaAdiacente("ovest").getNome()+" a ovest";
+        return this.toString();
     }
 
     /**
@@ -125,12 +123,13 @@ public class Stanza {
     	StringBuilder risultato = new StringBuilder();
     	risultato.append(this.nome);
     	risultato.append("\nUscite: ");
-    	for (String direzione : this.direzioni)
+    	for (String direzione : this.direzioni)//inizializzo "direzione"
     		if (direzione!=null)
     			risultato.append(" " + direzione);
     	risultato.append("\nAttrezzi nella stanza: ");
     	for (Attrezzo attrezzo : this.attrezzi) {
-    		risultato.append(attrezzo.toString()+" ");
+    		if (attrezzo!=null)
+    			risultato.append(attrezzo.toString()+" ");
     	}
     	return risultato.toString();
     }
