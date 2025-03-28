@@ -53,7 +53,7 @@ public class DiaDia {
 	 */
 	private boolean processaIstruzione(String istruzione) {
 		Comando comandoDaEseguire = new Comando(istruzione);
-
+		if (comandoDaEseguire.getNome()==null) return false;
 		if (comandoDaEseguire.getNome().equals("fine")) {
 			this.fine(); 
 			return true;
@@ -63,11 +63,16 @@ public class DiaDia {
 			this.aiuto();
 		else
 			System.out.println("Comando sconosciuto");
-		if (this.partita.vinta()) {
-			System.out.println("Hai vinto!");
-			return true;
-		} else
-			return false;
+		//se lasciato this.partita.vinta() posso uscire dal sistema solo se vinco anche se ci sono altre casistiche
+		if(this.partita.isFinita())
+		{
+			if (this.partita.vinta()) {
+				System.out.println("Hai vinto!");
+			}
+			return true;//finisce la partita a prescindere dalla vittoria
+			
+		}
+		return false;
 	}   
 
 	// implementazioni dei comandi dell'utente:
@@ -95,9 +100,11 @@ public class DiaDia {
 		else {
 			this.partita.setStanzaCorrente(prossimaStanza);
 			int cfu = this.partita.getCfu();
-			this.partita.setCfu(cfu--);
+			this.partita.setCfu(--cfu);//perché come in C, il comando in prefisso viene eseguito e poi restituito il valore
+									   //se fosse stato (cfu--) prima usa il valore cfu e poi lo aggiorna togliendo 1
 		}
-		System.out.println(partita.getStanzaCorrente().getDescrizione());
+		
+		System.out.println(partita);//in questo modo chiama il toString da solo
 	}
 
 	/**

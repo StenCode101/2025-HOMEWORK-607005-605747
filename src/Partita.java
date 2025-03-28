@@ -107,4 +107,9 @@ public class Partita {
 	public void setCfu(int cfu) {
 		this.cfu = cfu;		
 	}	
+	
+	public String toString()
+	{
+		return this.getStanzaCorrente()+"\nCfu = "+this.getCfu();
+	}
 }

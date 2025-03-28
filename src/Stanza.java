@@ -127,9 +127,8 @@ public class Stanza {
     		if (direzione!=null)
     			risultato.append(" " + direzione);
     	risultato.append("\nAttrezzi nella stanza: ");
-    	for (Attrezzo attrezzo : this.attrezzi) {
-    		if (attrezzo!=null)
-    			risultato.append(attrezzo.toString()+" ");
+    	for (int i=0; i<this.numeroAttrezzi;i++) { //iterando su numero attrezzi mi fermo prima di incontrare i null
+   			risultato.append(this.attrezzi[i].toString()+" ");
     	}
     	return risultato.toString();
     }
@@ -169,8 +168,18 @@ public class Stanza {
 	 * @param nomeAttrezzo
 	 * @return true se l'attrezzo e' stato rimosso, false altrimenti
 	 */
-	public boolean removeAttrezzo(Attrezzo attrezzo) {
-		// TODO da implementare
+	//wanted: ricercato
+	public boolean removeAttrezzo(Attrezzo wanted) {
+		for(int i=0; i<this.numeroAttrezzi;i++)
+		{
+			if(this.attrezzi[i]==wanted)
+			{
+				this.attrezzi[i]= this.attrezzi[this.numeroAttrezzi];
+				this.attrezzi[this.numeroAttrezzi -1] = null;
+				this.numeroAttrezzi--;
+				return true;
+			}
+		}
 		return false;
 	}
 

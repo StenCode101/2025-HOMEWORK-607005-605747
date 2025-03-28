@@ -1,0 +1,42 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+
+
+class StanzaTest {
+	private Stanza stanza;
+	private Attrezzo spada;
+	
+	@BeforeEach
+	void setUp() throws Exception {
+		this.stanza = new Stanza("n11");
+		this.spada = new Attrezzo("spada",10);
+	}
+
+	/*@Test
+	void testHasAttrezzo() {
+		
+	} */
+	 // C E UN ERRORE NEL CODICE STANZA 
+	
+	@Test
+	void testHasAttrezzoStanzaVuota() {
+		assertFalse(this.stanza.hasAttrezzo("spada"));
+	}
+	
+	@Test
+	void testHasAttrezzo() {
+		assertFalse(this.stanza.hasAttrezzo("spada"));
+		this.stanza.addAttrezzo(this.spada);
+		assertTrue(this.stanza.hasAttrezzo("spada"));
+	}
+	
+	@Test
+	void testRemoveAttrezzo() {
+		assertTrue(this.stanza.removeAttrezzo(spada));
+		this.stanza.addAttrezzo(this.spada);
+		assertTrue(this.stanza.removeAttrezzo(spada));
+	}
+
+}
