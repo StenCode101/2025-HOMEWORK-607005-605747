@@ -34,7 +34,7 @@ class StanzaTest {
 	
 	@Test
 	void testRemoveAttrezzo() {
-		assertTrue(this.stanza.removeAttrezzo(spada));
+		assertFalse(this.stanza.removeAttrezzo(spada));
 		this.stanza.addAttrezzo(this.spada);
 		assertTrue(this.stanza.removeAttrezzo(spada));
 	}
