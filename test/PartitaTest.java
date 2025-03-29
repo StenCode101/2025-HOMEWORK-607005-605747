@@ -15,6 +15,7 @@ class PartitaTest {
 	}
 	
 	
+	
 	@Test
 	void testNuovaPartitaNonFinita() {
 		assertFalse(this.partita.isFinita());

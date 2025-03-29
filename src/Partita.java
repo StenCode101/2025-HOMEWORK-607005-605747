@@ -29,7 +29,7 @@ public class Partita {
     private void creaStanze() {
     	
     	/*creo giocatore */
-    	Giocatore giocatore = new Giocatore();
+    	giocatore = new Giocatore();
     	
 		/* crea gli attrezzi */
     	Attrezzo lanterna = new Attrezzo("lanterna",3);

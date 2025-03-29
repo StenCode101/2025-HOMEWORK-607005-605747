@@ -2,13 +2,9 @@
 public class Giocatore {
 	static final private int CFU_INIZIALI = 20;
 	
-	private int cfu;
+	private int cfu= CFU_INIZIALI;
 	//private Borsa borsa;
-	
-	public Giocatore()
-	{
-		this.cfu = CFU_INIZIALI;
-	}
+
 	
 	public int getCfu() {
 		return this.cfu;
