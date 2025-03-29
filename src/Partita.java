@@ -13,11 +13,12 @@
 public class Partita {
 
 	static final private int CFU_INIZIALI = 20;
-
+	
 	private Stanza stanzaCorrente;
 	private Stanza stanzaVincente;
 	private boolean finita;
 	private int cfu;
+	private Labirinto labirinto;
 	
 	public Partita(){
 		creaStanze();
@@ -41,6 +42,9 @@ public class Partita {
 		Stanza laboratorio = new Stanza("Laboratorio Campus");
 		Stanza biblioteca = new Stanza("Biblioteca");
 		
+		//crea stanza iniziale e finale labirinto
+		Labirinto labirinto = new Labirinto(atrio, biblioteca);
+		
 		/* collega le stanze */
 		atrio.impostaStanzaAdiacente("nord", biblioteca);
 		atrio.impostaStanzaAdiacente("est", aulaN11);
@@ -60,8 +64,8 @@ public class Partita {
 		atrio.addAttrezzo(osso);
 
 		// il gioco comincia nell'atrio
-        stanzaCorrente = atrio;  
-		stanzaVincente = biblioteca;
+        stanzaCorrente = labirinto.getStanzaIniziale();  
+		stanzaVincente = labirinto.getStanzaFinale();
     }
 
 	public Stanza getStanzaVincente() {
