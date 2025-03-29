@@ -99,8 +99,8 @@ public class DiaDia {
 			System.out.println("Direzione inesistente");
 		else {
 			this.partita.setStanzaCorrente(prossimaStanza);
-			int cfu = this.partita.getCfu();
-			this.partita.setCfu(--cfu);//perché come in C, il comando in prefisso viene eseguito e poi restituito il valore
+			int cfu = this.partita.getGiocatore().getCfu();
+			this.partita.getGiocatore().setCfu(--cfu);;//perché come in C, il comando in prefisso viene eseguito e poi restituito il valore
 									   //se fosse stato (cfu--) prima usa il valore cfu e poi lo aggiorna togliendo 1
 		}
 		

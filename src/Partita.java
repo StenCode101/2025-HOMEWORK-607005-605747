@@ -11,26 +11,26 @@
  */
 
 public class Partita {
-
-	static final private int CFU_INIZIALI = 20;
 	
 	private Stanza stanzaCorrente;
 	private Stanza stanzaVincente;
 	private boolean finita;
-	private int cfu;
 	private Labirinto labirinto;
+	private Giocatore giocatore;
 	
 	public Partita(){
 		creaStanze();
 		this.finita = false;
-		this.cfu = CFU_INIZIALI;
 	}
 
     /**
      * Crea tutte le stanze e le porte di collegamento
      */
     private void creaStanze() {
-
+    	
+    	/*creo giocatore */
+    	Giocatore giocatore = new Giocatore();
+    	
 		/* crea gli attrezzi */
     	Attrezzo lanterna = new Attrezzo("lanterna",3);
 		Attrezzo osso = new Attrezzo("osso",1);
@@ -93,7 +93,7 @@ public class Partita {
 	 * @return vero se partita finita
 	 */
 	public boolean isFinita() {
-		return finita || vinta() || (cfu == 0);
+		return finita || vinta() || (this.giocatore.getCfu() == 0);
 	}
 
 	/**
@@ -102,18 +102,15 @@ public class Partita {
 	 */
 	public void setFinita() {
 		this.finita = true;
-	}
-
-	public int getCfu() {
-		return this.cfu;
-	}
-
-	public void setCfu(int cfu) {
-		this.cfu = cfu;		
 	}	
 	
 	public String toString()
 	{
-		return this.getStanzaCorrente()+"\nCfu = "+this.getCfu();
+		return this.getStanzaCorrente()+"\nCfu = "+this.giocatore.getCfu();
+	}
+	
+	public Giocatore getGiocatore()
+	{
+		return this.giocatore;
 	}
 }

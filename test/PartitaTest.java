@@ -35,7 +35,7 @@ class PartitaTest {
 	
 	@Test
 	void testPartitaFinitaPersa() {
-		partita.setCfu(0);
+		partita.getGiocatore().setCfu(0);
 		assertFalse(this.partita.vinta());
 	}
 	
