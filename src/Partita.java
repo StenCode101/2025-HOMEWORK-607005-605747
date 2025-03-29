@@ -43,7 +43,7 @@ public class Partita {
 		Stanza biblioteca = new Stanza("Biblioteca");
 		
 		//crea stanza iniziale e finale labirinto
-		Labirinto labirinto = new Labirinto(atrio, biblioteca);
+		labirinto = new Labirinto(atrio, biblioteca);
 		
 		/* collega le stanze */
 		atrio.impostaStanzaAdiacente("nord", biblioteca);
