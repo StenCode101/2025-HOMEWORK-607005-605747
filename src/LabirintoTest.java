@@ -8,7 +8,7 @@ class LabirintoTest {
 	
 	@BeforeEach
 	void setUp() throws Exception{
-		labirinto = new Labirinto(biblioteca,atrio);
+		//labirinto = new Labirinto(biblioteca,atrio);
 	}
 
 	@Test
