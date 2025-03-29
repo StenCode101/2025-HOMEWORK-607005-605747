@@ -57,3 +57,4 @@ public void setStanzaFinale(Stanza stanzaFinale) {
 		this.stanzaFinale = stanzaFinale;
 	}
 }
+/**ciao*/
