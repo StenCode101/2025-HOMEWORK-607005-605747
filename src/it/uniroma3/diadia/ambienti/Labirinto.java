@@ -1,3 +1,4 @@
+package it.uniroma3.diadia.ambienti;
 /**
  * questa classe modella il labirinto inizializzando la stanza iniziale e quella finale
  * 
