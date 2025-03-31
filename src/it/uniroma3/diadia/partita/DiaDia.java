@@ -2,7 +2,7 @@ package it.uniroma3.diadia.partita;
 
 
 import java.util.Scanner;
-
+import it.uniroma3.diadia.attrezzi.*;
 import it.uniroma3.diadia.ambienti.Stanza;
 
 /**
@@ -29,7 +29,7 @@ public class DiaDia {
 			"o regalarli se pensi che possano ingraziarti qualcuno.\n\n"+
 			"Per conoscere le istruzioni usa il comando 'aiuto'.";
 	
-	static final private String[] elencoComandi = {"vai", "aiuto", "fine"};
+	static final private String[] elencoComandi = {"vai", "aiuto", "fine", "prendi", "posa"};
 
 	private Partita partita;
 
@@ -64,6 +64,10 @@ public class DiaDia {
 			this.vai(comandoDaEseguire.getParametro());
 		else if (comandoDaEseguire.getNome().equals("aiuto"))
 			this.aiuto();
+		else if (comandoDaEseguire.getNome().equals("prendi"))
+			 this.prendi(comandoDaEseguire.getParametro());
+		else if (comandoDaEseguire.getNome().equals("posa"))
+			 this.posa(comandoDaEseguire.getParametro());
 		else
 			System.out.println("Comando sconosciuto");
 		//se lasciato this.partita.vinta() posso uscire dal sistema solo se vinco anche se ci sono altre casistiche
@@ -79,6 +83,71 @@ public class DiaDia {
 	}   
 
 	// implementazioni dei comandi dell'utente:
+	
+	/** 
+	 * mi consente di prendere un oggetto da una stanza*/
+	public void prendi(String attrezzo)
+	{
+		Attrezzo attrezzoDaPrendere  = new Attrezzo();
+		
+		if(attrezzo==null)
+		{
+			System.out.println("che oggetto vuoi prendere?");
+			System.out.println(partita);
+		}
+		else
+		{
+			if(this.partita.getStanzaCorrente().hasAttrezzo(attrezzo))
+			{
+			
+				attrezzoDaPrendere = this.partita.getStanzaCorrente().getAttrezzo(attrezzo);
+				if(this.partita.getGiocatore().getBorsa().addAttrezzo(attrezzoDaPrendere))
+				{	
+					this.partita.getStanzaCorrente().removeAttrezzo(attrezzoDaPrendere);
+					System.out.println("oggetto acquisito");
+				}
+				else
+				{
+					System.out.println("borsa piena");
+				}
+			}else
+				System.out.println("oggetto non presente nella stanza");
+			
+			System.out.println(partita);
+
+		}
+		
+		
+	}
+	
+	
+	/** 
+	 * mi consente di posare un oggetto da una stanza*/
+	public void posa(String attrezzo)
+	{
+		if(attrezzo==null)
+		{
+			System.out.println("che oggetto vuoi posare?");
+			System.out.println(partita);
+
+		}
+		else
+		{
+			Attrezzo attrezzoDaPosare = new Attrezzo();;
+			if(this.partita.getGiocatore().getBorsa().hasAttrezzo(attrezzo))
+			{
+				
+				attrezzoDaPosare = this.partita.getGiocatore().getBorsa().removeAttrezzo(attrezzo);
+				this.partita.getStanzaCorrente().addAttrezzo(attrezzoDaPosare);
+				System.out.println("oggetto posato correttamente nella stanza corrente");
+			}
+			else
+				System.out.println("il giocatore non possiede questo oggetto");
+			System.out.println(partita);
+
+		}
+		
+	} 
 
 	/**
 	 * Stampa informazioni di aiuto.
@@ -120,5 +189,9 @@ public class DiaDia {
 	public static void main(String[] argc) {
 		DiaDia gioco = new DiaDia();
 		gioco.gioca();
+	}
+	public Partita getPartita()
+	{
+		return this.partita;
 	}
 }

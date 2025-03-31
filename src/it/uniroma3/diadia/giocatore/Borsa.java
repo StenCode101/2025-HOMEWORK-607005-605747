@@ -68,9 +68,7 @@ public class Borsa {
 
 
 	public Attrezzo removeAttrezzo(String nomeAttrezzo) {
-
 		Attrezzo a = null;
-
 		int k = 0;
 		boolean trovato = false;
 		for(int i = 0; i < this.numeroAttrezzi; i++) {
@@ -110,6 +108,7 @@ public class Borsa {
 			s.append("Borsa vuota");
 		return s.toString();
 	}
+	
 }
 
 

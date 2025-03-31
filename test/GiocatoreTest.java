@@ -10,13 +10,13 @@ class GiocatoreTest {
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		giocatore = new Giocatore();
+		this.giocatore = new Giocatore();
 		
 	}
 
 	@Test
-	void testNumeroDiCfu() {
-		assertEquals(20,giocatore.getCfu());
+	void testNumeroDiCfuIniziali() {
+		assertEquals(20,this.giocatore.getCfu());
 	}
 
 }

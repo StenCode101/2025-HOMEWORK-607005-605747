@@ -155,9 +155,9 @@ public class Stanza {
 	public Attrezzo getAttrezzo(String nomeAttrezzo) {
 		Attrezzo attrezzoCercato;
 		attrezzoCercato = null;
-		for (Attrezzo attrezzo : this.attrezzi) {
-			if (attrezzo.getNome().equals(nomeAttrezzo))
-				attrezzoCercato = attrezzo;
+		for (int i=0;i<this.numeroAttrezzi;i++) {
+			if (this.attrezzi[i].getNome().equals(nomeAttrezzo))
+				attrezzoCercato = this.attrezzi[i];
 		}
 		return attrezzoCercato;	
 	}
@@ -173,7 +173,7 @@ public class Stanza {
 		{
 			if(this.attrezzi[i]==wanted)
 			{
-				this.attrezzi[i]= this.attrezzi[this.numeroAttrezzi];
+				this.attrezzi[i]= this.attrezzi[this.numeroAttrezzi-1];
 				this.attrezzi[this.numeroAttrezzi -1] = null;
 				this.numeroAttrezzi--;
 				return true;
