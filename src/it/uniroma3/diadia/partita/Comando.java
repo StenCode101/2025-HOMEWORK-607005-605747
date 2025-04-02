@@ -1,6 +1,6 @@
 package it.uniroma3.diadia.partita;
-import java.util.Scanner;
 
+import java.util.Scanner;
 /**
  * Questa classe modella un comando.
  * Un comando consiste al piu' di due parole:
@@ -17,6 +17,7 @@ public class Comando {
 
     private String nome;
     private String parametro;
+ 
 
     public Comando(String istruzione) {
 		Scanner scannerDiParole = new Scanner(istruzione);
