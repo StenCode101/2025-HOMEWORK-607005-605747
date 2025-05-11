@@ -1,19 +1,14 @@
 package it.uniroma3.diadia.partita;
 import java.util.Scanner;
 
-
-public class IOConsole {
-	
-	 public IOConsole() {
-	    }
-
+public class IOConsole implements IO{
 	public void mostraMessaggio(String msg) {
 		System.out.println(msg);
 	}
 	public String leggiRiga() {
 		Scanner scannerDiLinee = new Scanner(System.in);
 		String riga = scannerDiLinee.nextLine();
+		//scannerDiLinee.close();
 		return riga;
 	}
-
 }

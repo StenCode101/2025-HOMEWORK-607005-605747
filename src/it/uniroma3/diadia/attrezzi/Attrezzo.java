@@ -1,4 +1,6 @@
 package it.uniroma3.diadia.attrezzi;
+import it.uniroma3.diadia.ambienti.Stanza;
+
 /**
  * Una semplice classe che modella un attrezzo.
  * Gli attrezzi possono trovarsi all'interno delle stanze
@@ -23,13 +25,7 @@ public class Attrezzo {
 		this.peso = peso;
 		this.nome = nome;
 	}
-	
-	/* ho aggiunto un costruttore di default per prevenire nullpointer*/
-	public Attrezzo() {
-		this.peso = -1;
-		this.nome = "oggetto non inizializzato";
-	}
-	
+
 	/**
 	 * Restituisce il nome identificatore dell'attrezzo
 	 * @return il nome identificatore dell'attrezzo
