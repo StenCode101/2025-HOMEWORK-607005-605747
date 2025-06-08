@@ -5,8 +5,8 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 
-import it.uniroma3.diadia.CaricatoreLabirinto;
-import it.uniroma3.diadia.FormatoFileNonValidoException;
+import it.uniroma3.diadia.partita.CaricatoreLabirinto;
+import it.uniroma3.diadia.partita.FormatoFileNonValidoException;
 import it.uniroma3.diadia.personaggi.Cane;
 import it.uniroma3.diadia.personaggi.Mago;
 import it.uniroma3.diadia.personaggi.Strega;

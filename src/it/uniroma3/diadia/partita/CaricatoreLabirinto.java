@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-import it.uniroma3.diadia.FormatoFileNonValidoException;
+import it.uniroma3.diadia.partita.FormatoFileNonValidoException;
 import it.uniroma3.diadia.ambienti.Direzione;
 import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.ambienti.StanzaBloccata;

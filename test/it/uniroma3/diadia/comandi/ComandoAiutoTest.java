@@ -1,19 +1,26 @@
 package it.uniroma3.diadia.comandi;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import it.uniroma3.diadia.DiaDia;
-import it.uniroma3.diadia.IOSimulator;
+import it.uniroma3.diadia.partita.DiaDia;
+import it.uniroma3.diadia.partita.IOSimulator;
 import it.uniroma3.diadia.fixture.Fixture;
 
 public class ComandoAiutoTest {
 
+	List<String> righeDaLeggere;
+
 	@Before
 	public void setUp() throws Exception {
+		righeDaLeggere = new ArrayList<>();
 	}
 
 	@After
@@ -21,9 +28,10 @@ public class ComandoAiutoTest {
 	}
 
 	@Test
-	public void testPartitaConComandoAiuto() {
-		String[] righeDaLeggere = {"aiuto","fine"};
-		IOSimulator io = Fixture.creaSimulazionePartitaEGioca(righeDaLeggere);
+	public void testPartitaConComandoAiuto() throws Exception {
+		righeDaLeggere.add("aiuto");
+		righeDaLeggere.add("fine");
+		IOSimulator io = Fixture.creaSimulazionePartitaEGiocaEasy(righeDaLeggere);
 		assertTrue(io.hasNextMessaggio());
 		assertEquals(DiaDia.MESSAGGIO_BENVENUTO, io.nextMessaggio());
 		for(int i=0; i < ComandoAiuto.ELENCO_COMANDI.length; i++) {

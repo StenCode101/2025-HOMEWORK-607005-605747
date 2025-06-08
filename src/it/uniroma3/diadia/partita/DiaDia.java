@@ -6,10 +6,10 @@ import it.uniroma3.diadia.comandi.FabbricaDiComandiFisarmonica;
 
 import java.util.Scanner;
 
-import it.uniroma3.diadia.DiaDia;
-import it.uniroma3.diadia.IO;
-import it.uniroma3.diadia.IOConsole;
-import it.uniroma3.diadia.Partita;
+import it.uniroma3.diadia.partita.DiaDia;
+import it.uniroma3.diadia.partita.IO;
+import it.uniroma3.diadia.partita.IOConsole;
+import it.uniroma3.diadia.partita.Partita;
 import it.uniroma3.diadia.ambienti.Labirinto;
 import it.uniroma3.diadia.ambienti.Labirinto.LabirintoBuilder;
 import it.uniroma3.diadia.comandi.Comando;
